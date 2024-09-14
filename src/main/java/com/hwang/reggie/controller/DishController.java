@@ -83,16 +83,30 @@ public class DishController {
         return R.success(dishDtoPage);
     }
 
-    @GetMapping("/page")
-    public R<DishDto> update(Long id){
-        //根据id找到菜品
-        Dish dish = dishService.getById(id);
-        //根据获得到的对象得到对应的categoryId
-        Long categoryId = dish.getCategoryId();
-        //通过categoryId找到对应的
-        Category category = categoryService.getById(categoryId);
 
-        return R.success();
+    /*
+    * 根据id查询菜品信息和对应的口味信息
+    * */
+    @GetMapping("/{id}")
+    public R<DishDto> update(@PathVariable  Long id){
+
+        DishDto byIdWithFlavor = dishService.getByIdWithFlavor(id);
+
+        return R.success(byIdWithFlavor);
+    }
+
+
+    /*
+    修改菜品*/
+    @PutMapping
+    public R<String> updated(@RequestBody DishDto dishDto){
+        log.info("接收到的数据是:"+ dishDto.toString());
+        //更新操作不像增加操作，这个修改要改两张表
+        if(dishDto!=null){
+            dishService.updateWithFlavor(dishDto);
+        }
+
+        return R.success("成功添加菜品");
     }
 
 }

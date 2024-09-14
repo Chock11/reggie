@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00186496-1723-4bb6-8922-5e87603e37a3" name="Default Changelist" comment="" />
+    <list default="true" id="00186496-1723-4bb6-8922-5e87603e37a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/entity/SetmealDish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/DishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/DishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/impl/DishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/impl/DishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/controller/DishController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/DishService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/DishService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/impl/DishServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/impl/DishServiceImpl.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +35,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -39,6 +52,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2lbfj7gqB3E5Ifo1SQe6oXKb7Lj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -46,6 +62,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
@@ -113,11 +130,26 @@
       <workItem from="1725539299774" duration="9322000" />
       <workItem from="1725671112737" duration="3476000" />
       <workItem from="1725675092120" duration="32994000" />
-      <workItem from="1725886843117" duration="19399000" />
+      <workItem from="1725886843117" duration="25812000" />
+      <workItem from="1726151898525" duration="1148000" />
+      <workItem from="1726293847345" duration="1845000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
