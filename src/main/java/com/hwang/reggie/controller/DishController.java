@@ -109,4 +109,21 @@ public class DishController {
         return R.success("成功添加菜品");
     }
 
+    /*
+    *根据条件查询对应的菜品数据
+    * */
+    @GetMapping("/list")
+    public R<List<Dish>> list(Dish dish){
+        //构造查询对象
+        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
+        //添加排序条件
+        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+        queryWrapper.eq(Dish::getStatus,1);
+        //这一种的查询返回出来的是list集合类型的
+        List<Dish> dishes = dishService.list(queryWrapper);
+        return R.success(dishes);
+    }
+
 }
