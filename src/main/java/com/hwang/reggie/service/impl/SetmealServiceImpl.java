@@ -1,6 +1,8 @@
 package com.hwang.reggie.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hwang.reggie.common.CustomException;
 import com.hwang.reggie.dto.SetmealDto;
 import com.hwang.reggie.entity.Dish;
 import com.hwang.reggie.entity.Setmeal;
@@ -13,6 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +26,9 @@ public class SetmealServiceImpl extends ServiceImpl<SetMealMapper, Setmeal> impl
 
     @Autowired
     private SetmealDishService setmealDishService;
+
+    @Autowired
+    private SetmealService setmealService;
 
     @Override
     @Transactional
@@ -43,5 +50,55 @@ public class SetmealServiceImpl extends ServiceImpl<SetMealMapper, Setmeal> impl
         }).collect(Collectors.toList());
 
         setmealDishService.saveBatch(setmealDishes);
+    }
+
+    @Override
+    @Transactional
+    public void removeWithDish(List<Long> ids) {
+
+        //但是有一个问题还要判断是否其售卖状态在起售,自己想复杂了，以为用的不是框架要单独遍历呢，这样将会增加难度。
+        LambdaQueryWrapper<Setmeal> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.in(Setmeal::getId,ids);
+        queryWrapper.in(Setmeal::getStatus,1);
+
+        int count = this.count(queryWrapper);
+
+        if (count>0){
+            throw new CustomException("删除的有包含在售卖的套餐");
+        }
+
+        //如果不包含
+        this.removeByIds(ids);
+
+        //删除玩Setmeal之后还要删除SetmealDish
+        LambdaQueryWrapper<SetmealDish> wrapper = new LambdaQueryWrapper<>();
+        wrapper.in(SetmealDish::getDishId,ids);
+
+        setmealDishService.remove(wrapper);
+    }
+
+    @Override
+    public void updateStatusByDish1(List<Long> ids) {
+        for (Long id: ids){
+            Setmeal byId = setmealService.getById(id);
+            Long createUser = byId.getCreateUser();
+
+                byId.setStatus(1);
+                byId.setUpdateTime(LocalDateTime.now());
+                byId.setUpdateUser(createUser);
+            setmealService.saveOrUpdate(byId);
+        }
+    }
+
+    @Override
+    public void updateStatusByDish0(List<Long> ids) {
+        for (Long id: ids){
+            Setmeal byId = setmealService.getById(id);
+            Long createUser = byId.getCreateUser();
+            byId.setStatus(0);
+            byId.setUpdateTime(LocalDateTime.now());
+            byId.setUpdateUser(createUser);
+            setmealService.saveOrUpdate(byId);
+        }
     }
 }

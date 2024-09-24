@@ -4,9 +4,12 @@
     <list default="true" id="00186496-1723-4bb6-8922-5e87603e37a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/filter/LoginCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/filter/LoginCheckFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/SetmealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/SetmealService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/impl/SetmealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/service/impl/SetmealServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/controller/DishController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/filter/LoginCheckFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/filter/LoginCheckFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/SetmealService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/SetmealService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/impl/SetmealServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hwang/reggie/service/impl/SetmealServiceImpl.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,13 +75,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\10523\IdeaProjects\MallChat\reggie\src\main\resources\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\10523\IdeaProjects\MallChat\reggie\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\10523\IdeaProjects\MallChat\reggie\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -129,7 +133,10 @@
       <workItem from="1725675092120" duration="32994000" />
       <workItem from="1725886843117" duration="25812000" />
       <workItem from="1726151898525" duration="1148000" />
-      <workItem from="1726293847345" duration="14591000" />
+      <workItem from="1726293847345" duration="18111000" />
+      <workItem from="1726447572158" duration="21170000" />
+      <workItem from="1726546090619" duration="735000" />
+      <workItem from="1726984174892" duration="1873000" />
     </task>
     <task id="LOCAL-00001" summary="20240914">
       <created>1726309936012</created>
@@ -138,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726309936012</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="新加套餐">
+      <created>1726322909396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726322909396</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +173,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20240914" />
-    <option name="LAST_COMMIT_MESSAGE" value="20240914" />
+    <MESSAGE value="新加套餐" />
+    <option name="LAST_COMMIT_MESSAGE" value="新加套餐" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
