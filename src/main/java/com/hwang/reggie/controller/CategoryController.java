@@ -19,7 +19,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("category")
+@RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
@@ -107,5 +107,7 @@ public class CategoryController {
         List<Category> list = categoryService.list(queryWrapper);
         return R.success(list);
     }
+
+
 
 }
