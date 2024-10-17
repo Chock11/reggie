@@ -13,9 +13,12 @@ import com.hwang.reggie.service.DishService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @RestController
@@ -30,6 +33,9 @@ public class DishController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
     /*
     添加菜品*/
     @PostMapping
@@ -106,6 +112,15 @@ public class DishController {
         if(dishDto!=null){
             dishService.updateWithFlavor(dishDto);
         }
+        //有更新把所有的菜品缓存给删除掉
+//        Set keys = redisTemplate.keys("dish_*");
+//        redisTemplate.delete(keys);
+
+        //定点更新某个菜品的缓存
+        Long dishDtoId = dishDto.getId();
+        String key = "dish_"+dishDtoId+"_1";
+        Set keys = redisTemplate.keys(key);
+        redisTemplate.delete(keys);
 
         return R.success("成功添加菜品");
     }
@@ -134,6 +149,21 @@ public class DishController {
 
     @GetMapping("/list")
     public R<List<DishDto>> list(Dish dish){
+        List<DishDto> list = null;
+
+        //先动态的获取得到的key
+        String key = "dish_"+dish.getId()+"_"+dish.getStatus();
+
+        //从缓存中获取得到的缓存值
+        list = (List<DishDto>)redisTemplate.opsForValue().get(key);
+
+        //先判断缓存是否为空
+        if (list!=null && list.size()!=0){
+            //不为空的话直接将得到的redis缓存进行输出。
+            return R.success(list);
+        }
+
+        //如果不存在就继续执行下面的代码进行从数据库中查询。
         //构造查询对象
         LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
 
@@ -145,7 +175,7 @@ public class DishController {
         //这一种的查询返回出来的是list集合类型的
         List<Dish> dishes = dishService.list(queryWrapper);
 
-        List<DishDto> list = dishes.stream().map((item)->{
+        list = dishes.stream().map((item)->{
             DishDto dishDto =new DishDto();
             BeanUtils.copyProperties(item,dishDto);
             Long categoryId = item.getCategoryId();
@@ -167,8 +197,8 @@ public class DishController {
             return dishDto;
         }).collect(Collectors.toList());
 
-//        List<DishDto> dishDtoList = null;
-        //return R.success(dishes);
+        //查询完之后将数据放入到缓存当中。
+        redisTemplate.opsForValue().set(key,list,60, TimeUnit.MINUTES);
         return R.success(list);
     }
 

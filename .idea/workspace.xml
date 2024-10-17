@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00186496-1723-4bb6-8922-5e87603e37a3" name="Default Changelist" comment="">
+    <list default="true" id="00186496-1723-4bb6-8922-5e87603e37a3" name="Default Changelist" comment="20241013的提交">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/DishController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +70,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -128,7 +131,15 @@
       <workItem from="1726293847345" duration="18111000" />
       <workItem from="1726447572158" duration="21170000" />
       <workItem from="1726546090619" duration="735000" />
-      <workItem from="1726984174892" duration="5282000" />
+      <workItem from="1726984174892" duration="8211000" />
+      <workItem from="1727576311207" duration="15156000" />
+      <workItem from="1728393082511" duration="6139000" />
+      <workItem from="1728795647117" duration="1336000" />
+      <workItem from="1728816007373" duration="312000" />
+      <workItem from="1728816451681" duration="186000" />
+      <workItem from="1728816683002" duration="77000" />
+      <workItem from="1728816793255" duration="4560000" />
+      <workItem from="1728908590656" duration="4492000" />
     </task>
     <task id="LOCAL-00001" summary="20240914">
       <created>1726309936012</created>
@@ -158,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727188227230</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="20240925的提交">
+      <created>1727274062590</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727274062590</updated>
+    </task>
+    <task id="LOCAL-00006" summary="20241013的提交">
+      <created>1728795782308</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728795782308</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,22 +206,8 @@
     <MESSAGE value="20240914" />
     <MESSAGE value="新加套餐" />
     <MESSAGE value="20240924" />
-    <option name="LAST_COMMIT_MESSAGE" value="20240924" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hwang/reggie/controller/UserController.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="20240925的提交" />
+    <MESSAGE value="20241013的提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="20241013的提交" />
   </component>
 </project>
